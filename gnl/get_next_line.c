@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsoymaz <fsoymaz@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fatihsoymaz <fatihsoymaz@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 22:40:29 by fatihsoymaz       #+#    #+#             */
-/*   Updated: 2023/01/24 17:16:36 by fsoymaz          ###   ########.fr       */
+/*   Updated: 2023/01/24 21:23:00 by fatihsoymaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,34 +64,22 @@ char	*get_next_line(int fd)
 		return (NULL);
 	result = read_line(str);
 	str = next_line(str);
-	return (str);
+	return (result);
 }
 
-int	a(char	*str)
-{
-	int i = 0;
-	while(str[i])
-	{
-		i++;
-	}
-	return (i);
-}
-#include <stdio.h>
-#include <fcntl.h>
-int main()
-{
-	int fd = open("ft_txt", O_RDONLY);
-	int	i;
-	i = ft_strlen(get_next_line(fd));
-	printf("%d", i);
-	int a = 0;
-	char *str;
-	while (i  >= a)
-	{
-		str = get_next_line(fd);
-		printf("%s", str);
-		a++;
-	}
-	free(str);
+//#include <stdio.h>
+//#include <fcntl.h>
+//int main()
+//{
+//	int fd = open("ft_txt", O_RDONLY);
 
-}
+//	int a = 0;
+//	char *str;
+//	while ((str = get_next_line(fd)) != NULL)
+//	{
+//		printf("%d %s", a, str);
+//		a++;
+//		free(str);
+//	}
+//return (0);
+//}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsoymaz <fsoymaz@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fatihsoymaz <fatihsoymaz@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 22:51:55 by fatihsoymaz       #+#    #+#             */
-/*   Updated: 2023/01/24 17:16:50 by fsoymaz          ###   ########.fr       */
+/*   Updated: 2023/01/24 21:41:51 by fatihsoymaz      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,7 @@ char	*read_line(char	*str)
 	i = 0;
 	while (str[i] && str[i] != '\n')
 		i++;
-	result = malloc(sizeof(char) * (i + 2));
-	if (!result)
-		return (NULL);
-	i = 0;
-	while (str[i] && str[i] != '\n')
-	{
-		result[i] = str[i];
-		i++;
-	}
+	result = ft_substr(str, 0, i + 1);
 	if (str[i] == '\n')
 		result[i++] = '\n';
 	result[i] = '\0';
